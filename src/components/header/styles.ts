@@ -28,15 +28,14 @@ export const NewTransactionButton = styled.button`
    border: 0;
    border-radius: 6px;
 
-   font-weight: bold;
-   
    cursor: pointer;
-   transition: background 0.2s;
+   font-weight: bold;
 
    color: ${props => props.theme.white};
    background: ${props => props.theme["green-500"]};
 
    &:hover {
+      transition: background 0.2s;
       background: ${props => props.theme["green-700"]};
    }
 `
