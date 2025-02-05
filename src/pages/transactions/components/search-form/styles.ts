@@ -26,6 +26,7 @@ export const SearchFormContainer = styled.form`
       gap: 0.75rem;
       padding: 1rem;
       
+      cursor: pointer;
       font-weight: bold;
 
       border: 0;
