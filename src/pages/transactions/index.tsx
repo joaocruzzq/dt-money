@@ -7,6 +7,7 @@ import { SearchForm } from "./components/search-form";
 import { useContext } from "react";
 import { TransactionsContext } from "../../contexts/transactions-context";
 import { dateFormatter, priceFormatter } from "../../utils/formatter";
+import { Pagination } from "./components/pagination";
 
 export function Transactions() {
    const { transactions } = useContext(TransactionsContext)
@@ -40,6 +41,8 @@ export function Transactions() {
                   
                </tbody>
             </TransactionsTable>
+
+            <Pagination />
          </TransactionsContainer>
       </div>
    )

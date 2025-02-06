@@ -18,9 +18,18 @@ interface CreateTransactionInput {
 }
 
 interface TransactionContextType {
+   query: string
+
    transactions: Transaction[]
-   fetchTransactions: (query?: string) => Promise<void>
+   totalTransactions: Transaction[]
+
+   fetchTransactions: (query?: string, page?: number) => Promise<void>
    createTransaction: (data: CreateTransactionInput) => Promise<void>
+   
+   totalPages: number
+   currentPage: number
+
+   tablePagination: (page: number) => void
 }
 
 interface TransactionsProviderProps {
@@ -31,43 +40,70 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
    const [transactions, setTransactions] = useState<Transaction[]>([])
+   const [totalTransactions, setTotalTransactions] = useState<Transaction[]>([]);
    
-   async function fetchTransactions(query?: string) {
-      const response = await api.get('transactions', {
+   const [totalPages, setTotalPages] = useState(1)
+   const [currentPage, setCurrentPage] = useState(1)
+   
+   const itemsPerPage = 6
+
+   const [query, setQuery] = useState("")
+
+   async function fetchTransactions(query?: string, page = 1) {
+      setQuery(query || "")
+
+      const { data, headers } = await api.get("transactions", {
          params: {
             _sort: "createdAt",
             _order: "desc",
-            q: query
+            q: query,
+
+            _limit: itemsPerPage,
+            _page: page
          }
       })
 
-      setTransactions(response.data)
+      setTransactions(data)
+      setTotalPages(Math.ceil(Number(headers["x-total-count"]) / itemsPerPage))
+
+      if (totalTransactions.length === 0) {
+         const { data: allData } = await api.get("transactions"); 
+         setTotalTransactions(allData);
+      }
    }
 
    async function createTransaction(data: CreateTransactionInput) {
-      const { description, price, category, type } = data
-     
       const response = await api.post("transactions", {
-         description,
-         category,
-         price,
-         type,
+         ...data,
          createdAt: new Date()
       })
 
-      setTransactions(state => [response.data, ...state])
+      setTransactions(state => [response.data, ...state.slice(0, itemsPerPage -1)])
+      setTotalTransactions(state => [response.data, ...state])
+
+      fetchTransactions(query, 1)
+   }
+
+   function tablePagination(page: number) {
+      setCurrentPage(page)
+      fetchTransactions(query, page)
    }
 
    useEffect(() => {
-      fetchTransactions()
-   }, [])
+      fetchTransactions(query, currentPage)
+   }, [currentPage, query])
 
    return (
       <TransactionsContext.Provider
       value={{
+         query,
+         totalPages,
+         currentPage,
          transactions,
+         totalTransactions,
+         tablePagination,
          fetchTransactions,
-         createTransaction
+         createTransaction,
       }}>
          {children}
       </TransactionsContext.Provider>

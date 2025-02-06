@@ -23,6 +23,150 @@
       "category": "Educação",
       "price": 1980,
       "createdAt": "2025-02-03T22:30:30.5852"
+    },
+    {
+      "description": "Quitação de dívida no Banco",
+      "category": "Contas",
+      "price": 15000,
+      "type": "outcome",
+      "createdAt": "2025-02-06T18:02:01.173Z",
+      "id": 4
+    },
+    {
+      "description": "Herança de Titia",
+      "category": "Bonus",
+      "price": 20000,
+      "type": "income",
+      "createdAt": "2025-02-06T18:04:55.712Z",
+      "id": 5
+    },
+    {
+      "description": "Caldo de cana",
+      "category": "Alimentação",
+      "price": 8,
+      "type": "income",
+      "createdAt": "2025-02-06T18:06:30.732Z",
+      "id": 6
+    },
+    {
+      "description": "Caldo de cana",
+      "category": "Alimentação",
+      "price": 8,
+      "type": "outcome",
+      "createdAt": "2025-02-06T18:06:38.591Z",
+      "id": 7
+    },
+    {
+      "description": "Caldo de cana",
+      "category": "Alimentação",
+      "price": 8,
+      "type": "outcome",
+      "createdAt": "2025-02-06T18:06:56.528Z",
+      "id": 8
+    },
+    {
+      "description": "Divida",
+      "category": "Contas",
+      "price": 18000,
+      "type": "income",
+      "createdAt": "2025-02-06T18:14:36.783Z",
+      "id": 9
+    },
+    {
+      "description": "Divida",
+      "category": "",
+      "price": 180000,
+      "type": "outcome",
+      "createdAt": "2025-02-06T18:14:48.230Z",
+      "id": 10
+    },
+    {
+      "description": "teste",
+      "category": "Venda",
+      "price": 1,
+      "type": "outcome",
+      "createdAt": "2025-02-06T18:15:19.714Z",
+      "id": 11
+    },
+    {
+      "description": "aaaa",
+      "category": "Bonus",
+      "price": 150000,
+      "type": "income",
+      "createdAt": "2025-02-06T20:04:06.171Z",
+      "id": 12
+    },
+    {
+      "description": "Teste",
+      "category": "Bonus",
+      "price": 12,
+      "type": "income",
+      "createdAt": "2025-02-06T20:28:33.614Z",
+      "id": 13
+    },
+    {
+      "description": "Teste",
+      "category": "Bonus",
+      "price": 12,
+      "type": "outcome",
+      "createdAt": "2025-02-06T20:32:26.663Z",
+      "id": 14
+    },
+    {
+      "description": "Teste",
+      "category": "Contas",
+      "price": 12000,
+      "type": "outcome",
+      "createdAt": "2025-02-06T21:38:50.809Z",
+      "id": 15
+    },
+    {
+      "description": "Teste",
+      "category": "Contas",
+      "price": 12000,
+      "type": "outcome",
+      "createdAt": "2025-02-06T21:42:00.411Z",
+      "id": 16
+    },
+    {
+      "description": "Teste",
+      "category": "Contas",
+      "price": 12000,
+      "type": "income",
+      "createdAt": "2025-02-06T21:45:34.650Z",
+      "id": 17
+    },
+    {
+      "description": "Teste",
+      "category": "Contas",
+      "price": 12000,
+      "type": "outcome",
+      "createdAt": "2025-02-06T21:45:58.090Z",
+      "id": 18
+    },
+    {
+      "description": "Teste",
+      "category": "Contas",
+      "price": 12000,
+      "type": "outcome",
+      "createdAt": "2025-02-06T21:46:13.665Z",
+      "id": 19
+    },
+    {
+      "description": "Caldo de cana",
+      "category": "Alimentação",
+      "price": 12,
+      "type": "income",
+      "createdAt": "2025-02-06T21:46:24.073Z",
+      "id": 20
+    },
+    {
+      "description": "Desenvolvimento de App",
+      "category": "Venda",
+      "price": 32000,
+      "type": "income",
+      "createdAt": "2025-02-06T21:47:22.104Z",
+      "id": 21
     }
   ]
 }
