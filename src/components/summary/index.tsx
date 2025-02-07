@@ -18,7 +18,10 @@ export function Summary() {
             </header>
 
             <strong>{priceFormatter.format(summary.income)}</strong>
-            <span className="mobile-span">Última entrada em {lastIncomeFormattedDate}</span>
+
+            <span className="mobile-span">
+               Última entrada em {lastIncomeFormattedDate ? lastIncomeFormattedDate : "—"}
+            </span>
          </SummaryCard>
 
          <SummaryCard>
@@ -28,7 +31,10 @@ export function Summary() {
             </header>
 
             <strong>{priceFormatter.format(summary.outcome)}</strong>
-            <span className="mobile-span">Última saída em {lastOutcomeFormattedDate}</span>
+
+            <span className="mobile-span">
+               Última saída em {lastOutcomeFormattedDate ? lastOutcomeFormattedDate : "—"}
+            </span>
          </SummaryCard>
 
          <SummaryCard variant={summary.total > 0 ? "green" : "red"}>
@@ -38,7 +44,11 @@ export function Summary() {
             </header>
 
             <strong>{priceFormatter.format(summary.total)}</strong>
-            <span className="mobile-span">De {firstTransactionDate} até {lastTransactionDate}</span>
+
+            <span className="mobile-span">
+               De {firstTransactionDate ? firstTransactionDate : "— "}
+               até {lastTransactionDate ? lastTransactionDate : "—"}
+            </span>
          </SummaryCard>
       </SummaryContainer>
    )

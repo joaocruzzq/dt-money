@@ -19,6 +19,8 @@ export function Pagination() {
          tablePagination(currentPage - 1)
       }
    }
+   console.log("currentPage:", currentPage, "totalPages:", totalPages);
+
 
    const pages = Array.from({ length: totalPages }, (_, index) => index + 1)
 
@@ -34,7 +36,7 @@ export function Pagination() {
             </PaginationIndicator>
          ))}
 
-         <button disabled={currentPage === totalPages} onClick={handleNextPage}>
+         <button disabled={currentPage === totalPages || totalPages === 0 || totalPages === 1} onClick={handleNextPage}>
             <CaretRight size={24} weight="bold" />
          </button>
       </PaginationContainer>

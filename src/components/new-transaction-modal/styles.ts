@@ -15,7 +15,7 @@ export const Overlay = styled(Dialog.Overlay)`
 `
 
 export const Content = styled(Dialog.Content)`
-   min-width: 32rem;
+   width: 32rem;
 
    position: fixed;
    padding: 2.5rem 3rem;
@@ -75,6 +75,37 @@ export const Content = styled(Dialog.Content)`
          }
       }
    }
+
+   @media(max-width: 768px) {
+      display: grid;
+      position: fixed;
+
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      
+      width: 100%;
+      padding: 2rem 1.5rem;
+
+      border-top-left-radius: 1.25rem;
+      border-top-right-radius: 1.25rem;
+
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      h2 {
+         font-weight: 500;
+         font-size: 1.25rem;
+      }
+
+      form > input {
+         height: 3.375rem;
+      }
+
+      form > button[type = "submit"] {
+         height: 3.125rem;
+      }
+   }
 `
 
 export const CloseButton = styled(Dialog.Close)`
@@ -98,6 +129,10 @@ export const TransactionType = styled(RadioGroup.Root)`
 
    gap: 1rem;
    margin-top: 0.5rem;
+
+   @media(max-width: 768px) {
+      column-gap: 0.5rem;
+   }
 `
 
 interface TransactionTypeButtonProps {
@@ -111,6 +146,7 @@ export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButt
    justify-content: center;
    
    cursor: pointer;
+   height: 3.625rem;
    
    gap: 0.5rem;
    padding: 1rem;

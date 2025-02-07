@@ -65,6 +65,7 @@ export function NewTransactionModal() {
 
                <input
                required
+               step="0.01"
                type="number"
                placeholder="Preço"
                {...register("price", {valueAsNumber: true})}
