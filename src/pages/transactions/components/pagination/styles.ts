@@ -4,6 +4,7 @@ export const PaginationContainer = styled.div`
    display: flex;
    column-gap: 8px;
 
+   margin-bottom: 2.5rem;
    justify-content: center;
 
    button {

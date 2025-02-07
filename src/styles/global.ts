@@ -21,6 +21,13 @@ export const  GlobalStyle = createGlobalStyle`
    }
 
    body, input, text-area, button {
+      letter-spacing: 0.5px;
       font: 400 1rem Roboto, sans-serif;
+   }
+
+   @media(max-width: 768px) {
+      ::-webkit-scrollbar {
+         width: 0px;
+      }
    }
 `

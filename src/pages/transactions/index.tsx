@@ -18,9 +18,14 @@ export function Transactions() {
          <Summary />
 
          <TransactionsContainer>
-            <SearchForm />
+            {/* <div className="mobile-title">
+               <span>Transações</span>
+               <p>{transactions.length} items</p>
+            </div> */}
 
-            <TransactionsTable>
+            {/* <SearchForm /> */}
+
+            {/* <TransactionsTable>
                <tbody>
 
                   {transactions.map(transaction => {
@@ -40,9 +45,9 @@ export function Transactions() {
                   })}
                   
                </tbody>
-            </TransactionsTable>
+            </TransactionsTable> */}
 
-            <Pagination />
+            {/* <Pagination /> */}
          </TransactionsContainer>
       </div>
    )

@@ -7,7 +7,7 @@ import { priceFormatter } from "../../utils/formatter";
 import { useSummery } from "../../hooks/useSummary";
 
 export function Summary() {
-   const summary = useSummery()
+   const { summary, lastIncomeFormattedDate, lastOutcomeFormattedDate, firstTransactionDate, lastTransactionDate } = useSummery()
 
    return (
       <SummaryContainer>
@@ -18,6 +18,7 @@ export function Summary() {
             </header>
 
             <strong>{priceFormatter.format(summary.income)}</strong>
+            <span className="mobile-span">Última entrada em {lastIncomeFormattedDate}</span>
          </SummaryCard>
 
          <SummaryCard>
@@ -27,6 +28,7 @@ export function Summary() {
             </header>
 
             <strong>{priceFormatter.format(summary.outcome)}</strong>
+            <span className="mobile-span">Última saída em {lastOutcomeFormattedDate}</span>
          </SummaryCard>
 
          <SummaryCard variant={summary.total > 0 ? "green" : "red"}>
@@ -36,6 +38,7 @@ export function Summary() {
             </header>
 
             <strong>{priceFormatter.format(summary.total)}</strong>
+            <span className="mobile-span">De {firstTransactionDate} até {lastTransactionDate}</span>
          </SummaryCard>
       </SummaryContainer>
    )
