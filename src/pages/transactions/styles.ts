@@ -7,11 +7,19 @@ export const TransactionsContainer = styled.main`
    margin: 4rem auto 0;
    padding: 0 1.5rem;
 
+   .mobile-title, .mobile-svg {
+      display: none;
+   }
+
    @media(max-width: 768px) {
-      margin: 0.5rem 0;
+      display: grid;
+      
+      gap: 0.75rem;
+      margin: 0.125rem 0;
 
       .mobile-title {
          display: flex;
+         font-weight: 300;
 
          align-items: center;
          justify-content: space-between;
@@ -48,6 +56,82 @@ export const TransactionsTable = styled.table`
       &:last-child {
          border-top-right-radius: 6px;
          border-bottom-right-radius: 6px;
+      }
+   }
+
+   @media(max-width: 768px) {
+      margin: 0;
+      
+      tbody {
+         display: grid;
+         gap: 0.75rem;
+      }
+
+      tr {
+         display: grid;
+
+         grid-template-areas:
+         'description description'
+         'price price' 'category date';
+
+         line-height: 160%;
+
+         grid-template-rows: repeat(4, auto);
+      }
+
+      td {
+         display: flex;
+         align-items: center;
+
+         padding: 0 1.25rem;
+         column-gap: 0.5rem;
+
+         border-collapse: collapse;
+         border: 1px solid ${props => props.theme["gray-700"]};
+      }
+
+      td:first-child {
+         width: 100%;
+         padding-top: 1.25rem;
+
+         font-weight: 200;
+         grid-area: description;
+
+         border-top-right-radius: 6px;
+         border-bottom-left-radius: 0;
+      }
+
+      td:nth-child(2) {
+         width: 100%;
+         grid-area: price;
+
+         font-weight: 500;
+         line-height: 130%;
+         font-size: 1.25rem;
+
+         padding-top: 0.25rem;
+      }
+
+      td:nth-child(3) {
+         grid-area: category;
+         border-bottom-left-radius: 6px;
+      }
+
+      td:nth-child(4) {
+         display: flex;
+         grid-area: date;
+
+         justify-content: end;
+         border-top-right-radius: 0;
+      }
+
+      td:nth-child(3), td:nth-child(4) {
+         font-weight: 300;
+
+         padding-top: 0.75rem;
+         padding-bottom: 1.25rem;
+
+         color: ${props => props.theme["gray-500"]};
       }
    }
 `

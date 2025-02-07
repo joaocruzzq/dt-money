@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const SearchFormContainer = styled.form`
    display: flex;
+
    gap: 1rem;
+   height: 3.375rem;
 
    input {
       flex: 1;
@@ -46,6 +48,14 @@ export const SearchFormContainer = styled.form`
          background: ${props => props.theme["green-500"]};
          border: 1px solid ${props => props.theme["green-500"]};
          transition: background 0.2s, color 0.2s, border 0.2s;
+      }
+   }
+
+   @media(max-width: 768px) {
+      gap: 0.5rem;
+
+      button > span {
+         display: none;
       }
    }
 `

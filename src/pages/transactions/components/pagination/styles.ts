@@ -41,7 +41,7 @@ export const PaginationIndicator = styled.span<PageIndicatorType>`
    color: ${props => props.theme["gray-100"]};
    
    ${props => props.variant === "active" && css`
-      background: ${props => props.theme["green-500"]};
+      background: ${props => props.theme["green-700"]};
    `} 
 
    ${props => props.variant === "inactive" && css`

@@ -25,7 +25,7 @@ export function Pagination() {
    return (
       <PaginationContainer>
          <button disabled={currentPage === 1} onClick={handlePreviousPage}>
-            <CaretLeft size={24} />
+            <CaretLeft size={24} weight="bold" />
          </button>
 
          {pages.map(page => (
@@ -35,7 +35,7 @@ export function Pagination() {
          ))}
 
          <button disabled={currentPage === totalPages} onClick={handleNextPage}>
-            <CaretRight size={24} />
+            <CaretRight size={24} weight="bold" />
          </button>
       </PaginationContainer>
    )
