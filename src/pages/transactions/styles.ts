@@ -17,6 +17,10 @@ export const TransactionsContainer = styled.main`
       gap: 0.75rem;
       margin: 0.125rem 0;
 
+      .mobile-svg {
+         display: block;
+      }
+
       .mobile-title {
          display: flex;
          font-weight: 300;
